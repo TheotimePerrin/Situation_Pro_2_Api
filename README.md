@@ -54,4 +54,7 @@ php artisan serve
 
 npm run dev
 ```
+## Dans la barre de recherche Google
+
+http://localhost/Situation_Pro_2_Api/WoodyCraftWeb/public/api/puzzles
 
