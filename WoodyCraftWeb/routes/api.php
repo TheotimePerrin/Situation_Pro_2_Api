@@ -15,7 +15,6 @@ use App\Http\Controllers\Api\PanierController;
 Route::apiResource('puzzles', PuzzleController::class);
 
 // ── Commandes / Paniers ─────────────────────────────────────────────────
-Route::get('paniers',      [PanierController::class, 'index']); // liste   → Théotime
 Route::get('paniers/{id}', [PanierController::class, 'show']);  // détails → Evann
 
 // ── Auth ────────────────────────────────────────────────────────────────
