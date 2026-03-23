@@ -13,8 +13,8 @@ class Puzzle extends Model
         'nom',
         'categorie_id',
         'description',
-        'prix',
         'image',
+        'prix',
         'stock',
         'seuil_alerte',
     ];
@@ -22,7 +22,7 @@ class Puzzle extends Model
     // Relation avec la catégorie
     public function categorie()
     {
-        return $this->belongsTo(Categorie::class);
+        return $this->belongsTo(Categorie::class, 'categorie_id');
     }
 
     // Relation avec Panier via la table pivot "appartient"
