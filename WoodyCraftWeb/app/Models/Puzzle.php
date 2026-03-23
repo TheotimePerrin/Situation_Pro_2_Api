@@ -11,11 +11,12 @@ class Puzzle extends Model
 
     protected $fillable = [
         'nom',
-        'categorie',
+        'categorie_id',
         'description',
         'prix',
         'image',
         'stock',
+        'seuil_alerte',
     ];
 
     // Relation avec la catégorie

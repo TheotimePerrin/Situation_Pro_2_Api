@@ -9,8 +9,11 @@ class Panier extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['statut', 'total', 'mode_paiement', 'user_id'];
+    protected $fillable = ['statut', 'total', 'mode_paiement', 'user_id', 'adresse_id'];
 
+    public function adresse() {
+        return $this->belongsTo(Adresse::class);
+    }
     // Relation avec Puzzle via table pivot "appartient"
     public function puzzles()
     {

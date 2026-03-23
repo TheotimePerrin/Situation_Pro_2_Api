@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\PuzzleController;
+use App\Http\Controllers\Api\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,4 +18,13 @@ use App\Http\Controllers\Api\PuzzleController;
 Route::apiResource('puzzles', PuzzleController::class);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+Route::prefix('dashboard')->group(function () {
+    Route::get('/resume',            [DashboardController::class, 'resume']);
+    Route::get('/commandes-attente', [DashboardController::class, 'commandesEnAttente']);
+    Route::get('/stock-bas',         [DashboardController::class, 'stockBas']);
+    Route::get('/stats-ventes',      [DashboardController::class, 'statsVentes']);
+    Route::get('/top-puzzles',       [DashboardController::class, 'topPuzzles']);
 });
