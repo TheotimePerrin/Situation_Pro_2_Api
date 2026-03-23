@@ -22,4 +22,14 @@ class Puzzle extends Model
     {
         return $this->belongsTo(Categorie::class, 'categorie_id');
     }
+<<<<<<< HEAD
+=======
+
+    // Relation avec Panier via la table pivot "appartient"
+    public function paniers()
+    {
+        return $this->belongsToMany(Panier::class, 'appartient')
+                    ->withPivot('quantite');
+    }
+>>>>>>> dev
 }
