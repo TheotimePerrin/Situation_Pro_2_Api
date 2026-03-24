@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # WoodyCraftWeb
 
 ## Description
@@ -59,7 +58,6 @@ npm run dev
 
 http://localhost/Situation_Pro_2_Api/WoodyCraftWeb/public/api/puzzles
 
-=======
 # WoodyCraft Admin - Documentation API
 
 API REST Laravel pour le projet **WoodyCraftWeb**.
@@ -401,4 +399,3 @@ Retourne le top 5 des puzzles les plus commandés par quantité vendue.
   }
 ]
 ```
->>>>>>> adea1841dfe7c5d2fa66687b53335d42956837dd
