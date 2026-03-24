@@ -162,20 +162,20 @@ class PanierController extends Controller
         ]);
     }
 
-    public function destroy(int $id): JsonResponse
-    {
-        $panier = Panier::find($id);
+public function destroy(int $id): JsonResponse
+{
+    $panier = Panier::find($id);
 
-        if (!$panier) {
-            return response()->json([
-                'message' => 'Commande introuvable'
-            ], 404);
-        }
-
-        $panier->delete();
-
+    if (!$panier) {
         return response()->json([
-            'message' => 'Commande supprimée avec succès'
-        ]);
+            'message' => 'Commande introuvable'
+        ], 404);
     }
+
+    $panier->delete();
+
+    return response()->json([
+        'message' => 'Commande supprimée avec succès'
+    ]);
+}
 }
