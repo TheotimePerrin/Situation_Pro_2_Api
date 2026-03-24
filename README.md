@@ -1,65 +1,3 @@
-<<<<<<< HEAD
-# WoodyCraftWeb
-
-## Description
-
-WoodyCraftWeb est un projet Laravel 10 avec Vite pour le front-end.  
-Ce projet est configuré pour PHP >= 8.2 et nécessite Composer et Node.js pour fonctionner correctement.
-
----
-
-## Prérequis
-
-- PHP >= 8.2
-- Composer
-- Node.js et npm
-- MySQL ou un autre serveur de base de données
-
----
-
-## Installation
-
-1. Cloner le projet :
-
-```bash
-git clone <URL_DU_REPO>
-cd WoodyCraftWeb
-```
-
-2. installer les depandances PHP
-```bash
-composer install
-
-npm install
-
-cp .env.example .env
-php artisan key:generate
-```
-3. dans le .env
-```SQL
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=nom_de_la_base
-DB_USERNAME=root
-DB_PASSWORD=
-```
-4. Executer les migrations
-```bash
-php artisan migrate
-```
-
-## lancement 
-```bash
-php artisan serve
-
-npm run dev
-```
-## Dans la barre de recherche Google
-
-http://localhost/Situation_Pro_2_Api/WoodyCraftWeb/public/api/puzzles
-
-=======
 # WoodyCraft Admin - Documentation API
 
 API REST Laravel pour le projet **WoodyCraftWeb**.
@@ -80,6 +18,9 @@ API REST Laravel pour le projet **WoodyCraftWeb**.
 | GET | `/api/paniers` | Liste des paniers en cours |
 | POST | `/api/paniers` | Créer un panier |
 | GET | `/api/paniers/{id}` | Détail complet d'une commande |
+| PUT | `/api/puzzles/{id}/validate` | Modifier le statut d'une commande en validé |
+| PUT | `/api/puzzles/{id}/checkout` | Modifier le statut d'une commande validé en expediée |
+| DELETE | `/api/puzzles/{id}` | Supprimer une commande |
 | GET | `/api/dashboard/resume` | Chiffres clés du tableau de bord |
 | GET | `/api/dashboard/commandes-attente` | Commandes en attente |
 | GET | `/api/dashboard/stock-bas` | Puzzles en stock bas |
@@ -401,4 +342,3 @@ Retourne le top 5 des puzzles les plus commandés par quantité vendue.
   }
 ]
 ```
->>>>>>> adea1841dfe7c5d2fa66687b53335d42956837dd
