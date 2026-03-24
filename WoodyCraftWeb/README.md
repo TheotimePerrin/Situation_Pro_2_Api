@@ -27,33 +27,33 @@ cd WoodyCraftWeb
 ```
 
 2. installer les depandances PHP
-```bash
+
 composer install
 
 npm install
 
 cp .env.example .env
 php artisan key:generate
-```
+
 3. dans le .env
-```SQL
+
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=nom_de_la_base
 DB_USERNAME=root
 DB_PASSWORD=
-```
+
 4. Executer les migrations
-```bash
+
 php artisan migrate
-```
 
 ## lancement 
-```bash
+
 php artisan serve
 
 npm run dev
+<<<<<<< HEAD
 ```
 
 =======
@@ -114,3 +114,5 @@ Vous souhaitez contribuer au développement de **WoodyCraftWeb** ? Nous accepton
 
 WoodyCraftWeb est open-source et distribué sous ***licence MIT***.
 >>>>>>> bb0ed51342e2d32672e612ab2694876459226cb3
+=======
+>>>>>>> 07e0ec615d03f6b0c9849794cd0f422e3fa3b340
