@@ -80,6 +80,9 @@ API REST Laravel pour le projet **WoodyCraftWeb**.
 | DELETE | `/api/puzzles/{id}` | Supprimer un puzzle |
 | GET | `/api/paniers` | Liste des paniers en cours |
 | POST | `/api/paniers` | Créer un panier |
+| PUT | `/api/paniers/id/validate` | Validé commandes |
+| PUT | `/api/paniers/id/checkout` |  Commandes terminée Validée + Expédiée |
+| DELETE | `/api/paniers/id` | Suppression paniers |
 | GET | `/api/paniers/{id}` | Détail complet d'une commande |
 | PUT | `/api/puzzles/{id}/validate` | Modifier le statut d'une commande en validé |
 | PUT | `/api/puzzles/{id}/checkout` | Modifier le statut d'une commande validé en expediée |
@@ -90,7 +93,6 @@ API REST Laravel pour le projet **WoodyCraftWeb**.
 | GET | `/api/dashboard/stats-ventes` | Statistiques de ventes |
 | GET | `/api/dashboard/top-puzzles` | Top 5 puzzles les plus vendus |
 | GET | `/api/dashboard/stocks` | Liste des stocks disponibles |
-
 
 ---
 
