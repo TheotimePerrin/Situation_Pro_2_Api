@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Api;
-
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -24,7 +22,6 @@ class AuthController extends Controller
             ], 401);
         }
 
-        // 🔒 Vérif admin
         if ($user->role !== 'admin') {
             return response()->json([
                 'message' => 'Accès refusé (admin uniquement)'
@@ -40,6 +37,30 @@ class AuthController extends Controller
         ]);
     }
 
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6'
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 'admin'
+        ]);
+
+        $token = $user->createToken('token-api')->plainTextToken;
+
+        return response()->json([
+            'message' => 'Inscription réussie',
+            'token' => $token,
+            'user' => $user
+        ], 201);
+    }
+
     public function me(Request $request)
     {
         return response()->json($request->user());
@@ -48,7 +69,6 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $request->user()->currentAccessToken()->delete();
-
         return response()->json([
             'message' => 'Déconnexion réussie'
         ]);
