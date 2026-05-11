@@ -42,4 +42,9 @@ class Puzzle extends Model
     {
         return $this->hasMany(Avis::class, 'puzzle_id');
     }
+
+    public function approvisionnements()
+    {
+        return $this->hasMany(Approvisionnement::class, 'puzzle_id');
+    }
 }

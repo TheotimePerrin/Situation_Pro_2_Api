@@ -5,14 +5,15 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     public function up(): void {
-        Schema::create('appartient', function (Blueprint $table) {
+        Schema::create('approvisionnements', function (Blueprint $table) {
+            $table->id();
+            $table->string('nomFournisseur');
             $table->foreignId('puzzle_id')->constrained('puzzles')->onDelete('cascade');
-            $table->foreignId('panier_id')->constrained('paniers')->onDelete('cascade');
-            $table->integer('quantite')->default(1);
-            $table->primary(['puzzle_id', 'panier_id']);
+            $table->integer('quantitee');
+            $table->date('date');
         });
     }
     public function down(): void {
-        Schema::dropIfExists('appartient');
+        Schema::dropIfExists('approvisionnements');
     }
 };

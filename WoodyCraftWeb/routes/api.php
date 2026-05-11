@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\PuzzleController;
 use App\Http\Controllers\Api\PanierController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\StockController;
+use App\Http\Controllers\Api\ApprovisionnementController;
 
 // --- Puzzles ------------------------------------------------------------------
 Route::apiResource('puzzles', PuzzleController::class);
@@ -39,3 +40,7 @@ Route::prefix('dashboard')->group(function () {
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::apiResource('approvisionnements', ApprovisionnementController::class);
+
